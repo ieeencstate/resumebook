@@ -4,6 +4,7 @@
  	<%= f.text_field :username%><br> 
  	<%= f.label :password%><br>
  	<%= f.password_field :password%><br> 
- 	<%= f.select :user_type, ['Student', 'Employer']%>
+ 	<%= f.label :user_type%><br> 
+ 	<%= f.select :user_type, ['Student', 'Employer']%><br>
  	<%= f.submit %>
 <%end%>
