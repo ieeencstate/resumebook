@@ -1,6 +1,12 @@
-<h1>Welcome</h1>
+<h1>Welcome to the IEEE Resume Book</h1>
 <% if logged_in? %>   
-	<h1>You are Logged In, <%= current_user.username %></h1>
+	<h1>You are Logged In, <%= current_user.name.split[0] %> as a <%= current_user.user_type %></h1>
+
 <%end%>
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
+<% if !logged_in? %>
+	<%= button_to "Login", '/login', method: :get%>
+	<%= button_to "Sign Up", '/users/new', method: :get%>
+<% else %>
+	<%= button_to "Access Book", 'authorized', method: :get%>
+	<%= button_to "Logout", '/logout', method: :delete%>
+<% end %>
