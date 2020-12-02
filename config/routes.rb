@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   delete '/logout' => 'sessions#destroy'
   root 'sessions#welcome'
+  get 'resumes', to: 'resumes#index'
+  get 'new_resume', to: 'resumes#new'
+  post 'resumes', to: 'resumes#create'
 end
