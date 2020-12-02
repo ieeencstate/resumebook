@@ -1,9 +1,9 @@
 <h1>You have access to this page, <%= current_user.name %></h1>
 <% if current_user.user_type == 'Student'%>
 	Create student profile <br>
-	Upload resume <br>
+	<%= button_to "Upload your resume", '/resumes', method: :get%>
 <% else %>
 	Create company profile <br>
-	Access Resumes <br>
+	<%= button_to "Access Resumes", 'resumes', method: :get%>
 <% end %>
-<%= button_to "Back", '/welcome', method: :get%>
+<%= button_to "Back", 'welcome', method: :get%>

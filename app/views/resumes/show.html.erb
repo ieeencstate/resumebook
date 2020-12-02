@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @resume.title %>
+</p>
+
+<%= link_to 'Download', @resume.file, download: ''  %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @resume.description %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>
