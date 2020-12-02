@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resumes</h1>
+
+<% if current_user.user_type == 'Employer'%>
+  <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.title %></td>
+        <td><%= resume.description %></td>
+        <td><%= link_to 'Download', resume.file, download: ''  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+
+
+
+<% if current_user.user_type == 'Student'%>
+  <%= button_to "Upload your resume", 'new_resume', method: :get%>
+<% end %>
+
+
+
+<%= button_to "Back", 'authorized', method: :get%>
+
+

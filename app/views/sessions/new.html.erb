@@ -1,4 +1,9 @@
 <h1>Login</h1>
+<% if logged_in? %>
+	<% redirect_to '/welcome'  %>
+<% else %>
+	Try logging in below
+<%end %>
 	<%= form_tag '/login' do %>
 	<%= label_tag :username%>   
 	<%= text_field_tag :username %>   
