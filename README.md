@@ -1,24 +1,14 @@
-# README
+# North Carolina State University IEEE Resume Book
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Web Application is designed to connect our NCSU IEEE members with our gracious corporate sponsors.
+A student will be able to create a profile and upload their resume so prospective employers can view it.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.6.3
 
-* System dependencies
+* Database: SQLite3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Deployed temporarily on 152.7.98.243:8080
 
 * ...
