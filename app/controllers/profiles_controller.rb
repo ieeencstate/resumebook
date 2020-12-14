@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
     current_user.profile = @profile
     respond_to do |format|
       if @profile.save
+        UserMailer.with(user: current_user).welcome_email.deliver_now
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
@@ -42,6 +43,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
+        UserMailer.with(user: current_user).welcome_email.deliver_now
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
@@ -69,6 +71,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:major, :degree_type, :academic_year)
+      params.require(:profile).permit(:major, :degree_type, :academic_year, :email)
     end
 end

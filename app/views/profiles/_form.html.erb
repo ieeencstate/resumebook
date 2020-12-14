@@ -26,6 +26,11 @@
     <%= form.select :academic_year, ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate Student']%>
   </div>
 
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
