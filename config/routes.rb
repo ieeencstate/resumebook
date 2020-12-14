@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create]   
+  resources :profiles
+  resources :users, only: [:new, :create]  
+  
   get 'login', to: 'sessions#new'   
   post 'login', to: 'sessions#create'   
   get 'welcome', to: 'sessions#welcome'
@@ -11,4 +13,5 @@ Rails.application.routes.draw do
   post 'resumes', to: 'resumes#create'
   put 'resume', to: 'resumes#update'
   delete 'resume', to: 'resumes#destroy'
+  get 'profiles', to: 'profiles#index'
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @profile.major %>
+</p>
+
+<p>
+  <strong>Degree type:</strong>
+  <%= @profile.degree_type %>
+</p>
+
+<p>
+  <strong>Academic year:</strong>
+  <%= @profile.academic_year %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
