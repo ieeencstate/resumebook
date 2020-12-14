@@ -25,7 +25,7 @@ class ResumesController < ApplicationController
   # POST /resumes.json
   def create
     @resume = Resume.new(resume_params)
-
+    current_user.resume = @resume
     respond_to do |format|
       if @resume.save
         format.html { redirect_to resumes_url, notice: 'Resume was successfully created.' }
@@ -64,7 +64,7 @@ class ResumesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_resume
-      @resume = Resume.find(params[:id])
+      @resume = current_user.resume
     end
 
     # Only allow a list of trusted parameters through.

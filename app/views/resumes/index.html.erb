@@ -30,7 +30,11 @@
 
 
 <% if current_user.user_type == 'Student'%>
-  <%= button_to "Upload your resume", 'new_resume', method: :get%>
+  <% if !current_user.uploaded_resume %>
+    <%= button_to "Upload your resume", 'new_resume', method: :get%>
+  <% else %>
+    <%= button_to "Edit your resume", 'resume', method: :delete%>
+  <% end %>
 <% end %>
 
 

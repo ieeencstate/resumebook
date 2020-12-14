@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'resumes', to: 'resumes#index'
   get 'new_resume', to: 'resumes#new'
   post 'resumes', to: 'resumes#create'
+  put 'resume', to: 'resumes#update'
+  delete 'resume', to: 'resumes#destroy'
 end

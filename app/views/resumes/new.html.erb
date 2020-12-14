@@ -1,5 +1,15 @@
 <h1>New Resume</h1>
+<%= @resume.user %>
+<%= form_for @resume do |f|%> 
+	<%= f.label :title%>
+ 	<%= f.text_field :title%><br>	
+	<%= f.label :file %>
+    <%= f.file_field :file %><br>
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+ 	<%= f.submit %>
+<%end%>
 
-<%= render 'form', resume: @resume %>
+
 
 <%= link_to 'Back', resumes_path %>

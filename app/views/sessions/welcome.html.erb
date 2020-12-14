@@ -1,6 +1,7 @@
 <h1>Welcome to the IEEE Resume Book</h1>
 <% if logged_in? %>   
-	<h1>You are Logged In, <%= current_user.name.split[0] %> as a <%= current_user.user_type %></h1>
+	<h2>You are Logged In, <%= current_user.name.split[0] %> as a <%= current_user.user_type %></h2>
+
 
 <%end%>
 <% if !logged_in? %>
